@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestSquare : MonoBehaviour
+public class Character : MonoBehaviour
 {
     public float Speed = 5; //variables serializables públicas MonoBehaviour aparecen en Unity
 
@@ -20,6 +20,8 @@ public class TestSquare : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!GameManager.Instance.IsGameRunning) return;
+
         Move();
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -51,6 +53,12 @@ public class TestSquare : MonoBehaviour
     private void Shoot()
     {
         Instantiate(bullet, transform.position, Quaternion.identity);
+    }
+
+    public void OnDie()
+    {
+        // usualmente, se dispara un evento y un componente está suscripto al EventManager = patrón de diseño Observer
+        GameManager.Instance.OnCharacterDie();   
     }
 
 }

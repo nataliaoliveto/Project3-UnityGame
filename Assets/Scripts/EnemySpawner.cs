@@ -11,30 +11,28 @@ public class EnemySpawner : MonoBehaviour
     private GameObject enemyPrefab;
 
     [SerializeField]
-    private float spawnTime = 1f;
+    private float minSpawnTime = 1f;
+
+    [SerializeField]
+    private float maxSpawnTime = 1.75f;
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(SpawnEnemy());
         // empieza con coroutina hasta el yield time => vuelve a Unity y después de ese tiempo, le devuelve el control a la coroutina
         // en este caso sirve para no calcular timers
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        StartCoroutine(SpawnEnemy());
     }
 
     private IEnumerator SpawnEnemy()
     {
-        while (true)
+        while (GameManager.Instance.IsGameRunning)
         {
-            yield return new WaitForSeconds(spawnTime);
+            yield return new WaitForSeconds(Random.Range(minSpawnTime, maxSpawnTime));
 
-            Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+            float screenLimitX = GameManager.Instance.ScreenLimit.x;
             //quaternion en 0, no utilizamos rotación
+            Instantiate(enemyPrefab, new Vector3(Random.Range(-screenLimitX, screenLimitX), transform.position.y), Quaternion.identity);
         }
     }
 

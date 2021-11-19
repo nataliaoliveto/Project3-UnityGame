@@ -33,9 +33,6 @@ public class Health : MonoBehaviour, ITakeDamage
             onEntityDie?.Invoke();
             // si no es nulo
         }
-
-        Debug.Log($"Name: {name}. Current: {Current}");
-
     }   
 
 }
