@@ -1,16 +1,19 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 public class Health : MonoBehaviour, ITakeDamage
 {
     public int Current { get; private set; }
 
-    [SerializeField]
+    [SerializeField] //sólo se usa en los atributos privados
     private int max;
 
-    [SerializeField]
-    private UnityEvent onEntityDie;
+    [FormerlySerializedAs("onEntityDie")]
+    public UnityEvent OnEntityDie;
+
+    public UnityEvent OnEntityHit;
 
     private bool _isDead;
 
@@ -30,8 +33,12 @@ public class Health : MonoBehaviour, ITakeDamage
         if(Current <= 0)
         {
             _isDead = true;
-            onEntityDie?.Invoke();
+            OnEntityDie?.Invoke();
             // si no es nulo
+        }
+        else
+        {
+            OnEntityHit?.Invoke();
         }
     }   
 

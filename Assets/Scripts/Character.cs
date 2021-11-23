@@ -9,7 +9,7 @@ public class Character : MonoBehaviour
     [SerializeField]
     private GameObject bullet;
 
-    // atributos - con el SerializeField se puede visualizar en Unity
+    // atributos privados - con el SerializeField se puede visualizar en Unity
     //[SerializeField]
     //private float SpeedPrivada = 1;
     

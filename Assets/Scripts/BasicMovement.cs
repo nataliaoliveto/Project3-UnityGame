@@ -35,4 +35,9 @@ public class BasicMovement : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public void SetSpeed(float amount)
+    {
+        speed = amount;
+    }
 }

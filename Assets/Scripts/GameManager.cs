@@ -1,11 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
 
 public class GameManager : MonoBehaviour
 {
-
     public static GameManager Instance { get; private set; }
 
     public Vector2 ScreenLimit { get; private set; }
@@ -14,9 +14,11 @@ public class GameManager : MonoBehaviour
 
     public bool IsGameRunning { get; private set; }
 
+    // suscribir a la action || el delegate hace que no sea nulo, declara una firma y asigna una función vacía para evitar errores de suscripción
+    public event Action OnGameEnd = delegate { };
+
     [SerializeField]
     private Text scoreText;
-
 
     private void Awake()
     {
@@ -46,6 +48,8 @@ public class GameManager : MonoBehaviour
 
     public void AddScore(int amount)
     {
+        if (!IsGameRunning) return;
+
         Score += amount;
         scoreText.text = $"Score: {Score}";
     }
@@ -55,6 +59,13 @@ public class GameManager : MonoBehaviour
         if (!IsGameRunning) return;
 
         IsGameRunning = false;
+
+        // Se guarda dentro de Unity
+        if (PlayerPrefs.GetInt(Constants.HIGHSCORE_PREF) < Score)
+            PlayerPrefs.SetInt(Constants.HIGHSCORE_PREF, Score);
+
+        OnGameEnd?.Invoke();
+
 
     }
 
