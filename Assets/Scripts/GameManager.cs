@@ -50,11 +50,28 @@ public class GameManager : MonoBehaviour
     {
         if (!IsGameRunning) return;
 
-        Score += amount;
+        int newScore = Score + amount;
+
+        if(newScore > 0)
+        {
+            Score = newScore;
+        }
+        else
+        {
+            Score = 0;
+            OnDefeat();
+        }
+
         scoreText.text = $"Score: {Score}";
+        
     }
 
     public void OnCharacterDie()
+    {
+        OnDefeat();
+    }
+
+    private void OnDefeat()
     {
         if (!IsGameRunning) return;
 
@@ -65,8 +82,6 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt(Constants.HIGHSCORE_PREF, Score);
 
         OnGameEnd?.Invoke();
-
-
     }
 
 }

@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9f8e3eee1385c9846a6ee69e9832facc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 037b2bfebee0bbf448dbbb4ae811f5f1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 1989536410235922085}
   - component: {fileID: 4688989381963494073}
   m_Layer: 7
-  m_Name: EnemyEasy
+  m_Name: EnemyMedium
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -115,7 +115,7 @@ Transform:
   m_GameObject: {fileID: 4754384534635577472}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_Children:
   - {fileID: 4922110837184625473}
   m_Father: {fileID: 0}
@@ -197,7 +197,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: -20
+          m_IntArgument: -30
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -214,7 +214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b79844aae9f35c4fb970f814b4df003, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  max: 20
+  max: 40
   OnEntityDie:
     m_PersistentCalls:
       m_Calls:
@@ -322,8 +322,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   feedback:
+  - Health: 30
+    Sprite: {fileID: 21300000, guid: fd396d8eafd06074caeb0acbbcf94025, type: 3}
   - Health: 10
-    Sprite: {fileID: 21300000, guid: 76c6b25789ec96a4395ab5a40ac2a93c, type: 3}
+    Sprite: {fileID: 21300000, guid: 34b3a08e2e04a0b4399f3b2dedd3fdbe, type: 3}
   - Health: 0
-    Sprite: {fileID: 21300000, guid: 21cdc3182f810f3498d6feac16de83ec, type: 3}
+    Sprite: {fileID: 21300000, guid: 0f34fb5f216ff8e4eb745faa769591e7, type: 3}
   artRenderer: {fileID: 8186242076080850924}

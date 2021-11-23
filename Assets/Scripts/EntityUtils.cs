@@ -9,9 +9,8 @@ public class EntityUtils : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void DestroyEntityAfterSeconds(int seconds)
-    {
-        
+    public void DestroyEntityAfterSeconds(float seconds)
+    {        
         Destroy(gameObject, seconds);
     }
 

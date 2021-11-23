@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class BasicMovement : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class BasicMovement : MonoBehaviour
     [SerializeField]
     private float marginY;
 
+    [SerializeField]
+    private UnityEvent onExitScreen;
+    
     private float _realMargin;
 
     void Start()
@@ -32,6 +36,7 @@ public class BasicMovement : MonoBehaviour
         if(transform.position.y > _realMargin || 
            transform.position.y < -_realMargin)
         {
+            onExitScreen?.Invoke();
             Destroy(gameObject);
         }
     }

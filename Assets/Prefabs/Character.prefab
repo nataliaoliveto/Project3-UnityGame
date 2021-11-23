@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 1738616947626399911}
   - component: {fileID: 1738616947626399904}
   - component: {fileID: 1738616947626399915}
+  - component: {fileID: 4131777553162570841}
   m_Layer: 6
   m_Name: Character
   m_TagString: Untagged
@@ -131,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3482f5fb12c4d9e438f94ff472c093af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 3
+  Speed: 3.25
   bullet: {fileID: 4754384534635577472, guid: 5b004270301fbb943a678ca114f3b35a, type: 3}
 --- !u!114 &1738616947626399910
 MonoBehaviour:
@@ -145,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b79844aae9f35c4fb970f814b4df003, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  max: 100
+  max: 30
   OnEntityDie:
     m_PersistentCalls:
       m_Calls:
@@ -228,3 +229,23 @@ PolygonCollider2D:
       - {x: -0.00042271614, y: -0.57660747}
       - {x: 0.296217, y: -0.3146183}
       - {x: 0.329889, y: 0.030125588}
+--- !u!114 &4131777553162570841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738616947626399914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfba27b584199f4d967d44e5ea2573d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  feedback:
+  - Health: 20
+    Sprite: {fileID: 21300000, guid: 9db08a8907e9e1d4a99f9ba9b9493d89, type: 3}
+  - Health: 10
+    Sprite: {fileID: 21300000, guid: 419c8932c7439074fab8674ecebe5ee7, type: 3}
+  - Health: 0
+    Sprite: {fileID: 21300000, guid: 1d344aa71812fcf4780d2ff63ff2b548, type: 3}
+  artRenderer: {fileID: 1738616946443386648}
