@@ -2,9 +2,6 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    // variable privada serializada con minuscula
-    // variable privada inicia con _
-
     [SerializeField]
     private TimerSpawn enemyEasy;
     [SerializeField]

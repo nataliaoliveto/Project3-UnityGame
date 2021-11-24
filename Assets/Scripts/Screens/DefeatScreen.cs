@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
-
 public class DefeatScreen : MonoBehaviour
 {
     [SerializeField]
@@ -32,7 +30,7 @@ public class DefeatScreen : MonoBehaviour
         else
         {
             highscore.text = $"HIGHSCORE\n{highScorePrefs}";
-            currentScore.text = $"Your score\n{score}";
+            currentScore.text = $"Score\n{score}";
         }        
     }
 

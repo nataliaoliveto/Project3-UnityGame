@@ -5,14 +5,10 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
-
     public Vector2 ScreenLimit { get; private set; }
-
     public int Score { get; private set; }
-
     public bool IsGameRunning { get; private set; }
-
-    // suscribir a la action || el delegate hace que no sea nulo, declara una firma y asigna una función vacía para evitar errores de suscripción
+    
     public event Action OnGameEnd = delegate { };
 
     [SerializeField]
@@ -24,7 +20,6 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this);
             return;
-            //cumplir el "Singleton"
         }
 
         Instance = this;
@@ -38,8 +33,6 @@ public class GameManager : MonoBehaviour
     {
         Camera mainCamera = Camera.main;
 
-        //puntos de limite de la camara, punto derecha abajo y en negativo punto izquierda abajo
-        //transforma los pixeles de la camara en unidades del mundo
         ScreenLimit = mainCamera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, mainCamera.transform.position.z));
         
     }
