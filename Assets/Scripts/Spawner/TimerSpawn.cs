@@ -1,34 +1,34 @@
 ﻿using System;
-using System.Collections;
 using UnityEngine;
 
 [Serializable]
-public class TimerSpawn 
+public class TimerSpawn : ObjectSpawn
 {
-    [SerializeField]
-    private GameObject gameObject;
     [SerializeField]
     private float minSpawnTime;
     [SerializeField]
     private float maxSpawnTime;
 
-    public event Action<GameObject> OnTimeToSpawn = delegate { };
     private float _currentTimer;
 
-    public void OnTick()
+    public override bool OnTick()
     {
+        if (!Initialized) return false;
+
         if(_currentTimer > 0)
         {
             _currentTimer -= Time.deltaTime;
         }
         else
         {
-            OnTimeToSpawn?.Invoke(gameObject);
+            OnTimeToSpawn?.Invoke(prefab);
             Reset();
+            return true;
         }
+        return false;
     }
 
-    public void Reset()
+    public override void Reset()
     {
         _currentTimer = GetRandomTime();
     }

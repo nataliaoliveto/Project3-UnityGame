@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-
 
 public class GameManager : MonoBehaviour
 {
@@ -77,7 +75,6 @@ public class GameManager : MonoBehaviour
 
         IsGameRunning = false;
 
-        // Se guarda dentro de Unity
         if (PlayerPrefs.GetInt(Constants.HIGHSCORE_PREF) < Score)
             PlayerPrefs.SetInt(Constants.HIGHSCORE_PREF, Score);
 

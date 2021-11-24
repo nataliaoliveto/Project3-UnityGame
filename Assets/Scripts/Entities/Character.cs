@@ -9,6 +9,9 @@ public class Character : MonoBehaviour
     [SerializeField]
     private GameObject bullet;
 
+    [SerializeField]
+    private Transform art;
+
     // atributos privados - con el SerializeField se puede visualizar en Unity
     //[SerializeField]
     //private float SpeedPrivada = 1;
@@ -41,6 +44,9 @@ public class Character : MonoBehaviour
 
         //Time.deltaTime = intervalos de segundos entre frames
         //se puede mover en el eje del pj o del mundo
+
+        // gimbal lock - gira sólo en eje z * numero random
+        art.rotation = Quaternion.Euler(0,0,-Input.GetAxis("Horizontal")*17);
 
         transform.position += Speed * Time.deltaTime * new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;  //0 - 1 sólo dirección, no magnitud
 

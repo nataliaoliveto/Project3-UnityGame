@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
-
+﻿using UnityEngine;
 
 public class EntityUtils : MonoBehaviour
 {
@@ -25,7 +23,6 @@ public class EntityUtils : MonoBehaviour
 
     public void AddScore(int score)
     {
-        // muerte por kill
         GameManager.Instance.AddScore(score);
     }
 

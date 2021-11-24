@@ -134,6 +134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 3.25
   bullet: {fileID: 4754384534635577472, guid: 5b004270301fbb943a678ca114f3b35a, type: 3}
+  art: {fileID: 1738616946443386655}
 --- !u!114 &1738616947626399910
 MonoBehaviour:
   m_ObjectHideFlags: 0

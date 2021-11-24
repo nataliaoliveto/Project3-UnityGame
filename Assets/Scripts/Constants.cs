@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
-
-public static class Constants 
+﻿public static class Constants 
 {
     public const string HIGHSCORE_PREF = "HIGHSCORE";
 

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
@@ -11,37 +9,38 @@ public class EnemySpawner : MonoBehaviour
     private TimerSpawn enemyEasy;
     [SerializeField]
     private TimerSpawn enemyMedium;
+    [SerializeField]
+    private ScoreSpawn enemyHard;
 
     private float _screenLimitX;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         _screenLimitX = GameManager.Instance.ScreenLimit.x;
-        ResetTimers();
-        enemyEasy.OnTimeToSpawn += SpawnEnemy;
-        enemyMedium.OnTimeToSpawn += SpawnEnemy;
+        enemyEasy.Initialize(SpawnEnemy);
+        enemyMedium.Initialize(SpawnEnemy);
+        enemyHard.Initialize(SpawnEnemy);
     }
 
     private void SpawnEnemy(GameObject enemyPrefab)
     {
         Instantiate(enemyPrefab, new Vector3(UnityEngine.Random.Range(-_screenLimitX, _screenLimitX), transform.position.y), Quaternion.identity);
-        
     }
 
     private void Update()
     {
         if (GameManager.Instance.IsGameRunning)
         {
-            enemyEasy?.OnTick();
-            enemyMedium?.OnTick();
+            if (enemyHard.OnTick())
+            {
+                enemyMedium.Reset();
+                enemyEasy.Reset();
+            }
+
+            if (enemyMedium.OnTick())
+                enemyEasy.Reset();
+
+            enemyEasy.OnTick();
         }
     }
-
-    private void ResetTimers()
-    {
-        enemyEasy.Reset();
-        enemyMedium.Reset();
-    }
-
 }

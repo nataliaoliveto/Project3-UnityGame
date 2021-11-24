@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4922110837184625473}
   - component: {fileID: 8186242076080850924}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Art
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,9 +71,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.7735849, g: 0.20799215, b: 0.20799215, a: 1}
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: cdbe5ba49f57d1344adb40abab5b3f87, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -92,13 +92,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7147006687436272131}
-  - component: {fileID: -1288063770709073480}
-  - component: {fileID: 5785404363439564925}
   - component: {fileID: 6543451250676109937}
+  - component: {fileID: 8051523009057267034}
+  - component: {fileID: 5785404363439564925}
+  - component: {fileID: -4790213018521997210}
   - component: {fileID: 8905560052443875834}
   - component: {fileID: 1989536410235922085}
-  m_Layer: 9
-  m_Name: EnemyBullet
+  - component: {fileID: 4688989381963494073}
+  m_Layer: 7
+  m_Name: EnemyHard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -113,52 +115,12 @@ Transform:
   m_GameObject: {fileID: 4754384534635577472}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4922110837184625473}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &-1288063770709073480
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4754384534635577472}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.2, y: 0.2}
-  m_EdgeRadius: 0
---- !u!114 &5785404363439564925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4754384534635577472}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65fb059c42fe7d741abb37d7d7a880c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  marginY: 0
 --- !u!50 &6543451250676109937
 Rigidbody2D:
   serializedVersion: 4
@@ -180,6 +142,133 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!60 &8051523009057267034
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4754384534635577472}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.007948615, y: 0.5628264}
+      - {x: -0.28796345, y: 0.31663874}
+      - {x: -0.340078, y: -0.035408348}
+      - {x: -0.0007377267, y: -0.56876814}
+      - {x: 0.33180276, y: -0.016353816}
+      - {x: 0.27271986, y: 0.312828}
+--- !u!114 &5785404363439564925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4754384534635577472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65fb059c42fe7d741abb37d7d7a880c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: -1.75
+  marginY: 1
+  onExitScreen:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1989536410235922085}
+        m_TargetAssemblyTypeName: EntityUtils, ScriptsAssembly
+        m_MethodName: AddScore
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: -50
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &-4790213018521997210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4754384534635577472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b79844aae9f35c4fb970f814b4df003, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  max: 60
+  OnEntityDie:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1989536410235922085}
+        m_TargetAssemblyTypeName: EntityUtils, ScriptsAssembly
+        m_MethodName: DestroyEntityAfterSeconds
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0.75
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1989536410235922085}
+        m_TargetAssemblyTypeName: EntityUtils, ScriptsAssembly
+        m_MethodName: AddScore
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 50
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1989536410235922085}
+        m_TargetAssemblyTypeName: EntityUtils, ScriptsAssembly
+        m_MethodName: DisableColliders
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5785404363439564925}
+        m_TargetAssemblyTypeName: BasicMovement, ScriptsAssembly
+        m_MethodName: SetSpeed
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: -0.6
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnEntityHit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &8905560052443875834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,3 +309,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5b1c36d02146584d9ef86e01780566f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4688989381963494073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4754384534635577472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfba27b584199f4d967d44e5ea2573d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  feedback:
+  - Health: 50
+    Sprite: {fileID: 21300000, guid: 154ad492acf58124297b5cf4a3ecb59a, type: 3}
+  - Health: 10
+    Sprite: {fileID: 21300000, guid: 4622fa09c4f87e843b98f1d432accac5, type: 3}
+  - Health: 0
+    Sprite: {fileID: 21300000, guid: b9edf6d7507084d45a735b5066f7602b, type: 3}
+  artRenderer: {fileID: 8186242076080850924}
