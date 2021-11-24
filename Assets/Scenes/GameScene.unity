@@ -553,8 +553,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyEasy:
     prefab: {fileID: 4754384534635577472, guid: 173ec81c201b35445bec438e78fa0b90, type: 3}
-    minSpawnTime: 1.5
-    maxSpawnTime: 3
+    minSpawnTime: 1
+    maxSpawnTime: 2
   enemyMedium:
     prefab: {fileID: 4754384534635577472, guid: 01b3112b197eca941985e72e19af6061, type: 3}
     minSpawnTime: 5
